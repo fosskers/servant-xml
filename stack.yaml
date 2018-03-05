@@ -1,0 +1,7 @@
+resolver: lts-10.8
+
+packages:
+  - .
+
+extra-deps:
+  - xmlbf-0.3
