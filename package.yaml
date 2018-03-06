@@ -2,7 +2,7 @@ name:                servant-xml
 version:             1.0.1
 synopsis:            Servant support for the XML Content-Type
 description:         Servant support for the Content-Type of /application\/xml/.
-                     Anything with a 'Xmlbf.ToXml' instance can be automatically marshalled.
+                     Anything with 'ToXml' and 'FromXml' instances can be automatically marshalled.
 homepage:            https://github.com/fosskers/servant-xml
 license:             BSD3
 author:              Colin Woodbury
@@ -12,6 +12,7 @@ category:            Web
 
 extra-source-files:
   - README.md
+  - CHANGELOG.md
 
 ghc-options:
   - -fwarn-unused-imports
