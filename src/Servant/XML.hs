@@ -17,9 +17,11 @@
 module Servant.XML where
 
 import           Data.ByteString.Builder (toLazyByteString)
+import           Data.ByteString.Lazy (toStrict)
 import qualified Network.HTTP.Media as M
 import           Servant.API
 import           Xmlbf
+import           Xmlbf.Xeno
 
 ---
 
@@ -31,7 +33,9 @@ import           Xmlbf
 -- instance ToXml Foo where
 --   toXml foo = ...
 --
--- type API = ... :\<|\> "foo" :> Get '[XML] Foo
+-- type API = ...
+--   :\<|\> "foo" :> Get '[XML] Foo
+--   :\<|\> "foo" :> "update" :> ReqBody '[XML] Foo :> PostAccepted '[JSON] ()
 -- @
 data XML
 
@@ -40,3 +44,6 @@ instance Accept XML where
 
 instance ToXml a => MimeRender XML a where
   mimeRender _ = toLazyByteString . encode . toXml
+
+instance FromXml a => MimeUnrender XML a where
+  mimeUnrender _ bs = nodes (toStrict bs) >>= runParser fromXml
