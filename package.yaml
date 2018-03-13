@@ -1,5 +1,5 @@
 name:                servant-xml
-version:             1.0.1
+version:             1.0.1.1
 synopsis:            Servant support for the XML Content-Type
 description:         Servant support for the Content-Type of /application\/xml/.
                      Anything with 'ToXml' and 'FromXml' instances can be automatically marshalled.
@@ -26,7 +26,7 @@ dependencies:
   - base >= 4.7 && < 5
   - bytestring
   - http-media >= 0.7 && < 0.8
-  - servant >= 0.11 && < 0.13
+  - servant >= 0.11 && < 0.14
   - xmlbf >= 0.3 && < 0.4
   - xmlbf-xeno >= 0.1 && < 0.2
 
