@@ -27,8 +27,8 @@ dependencies:
   - bytestring
   - http-media >= 0.7 && < 0.8
   - servant >= 0.11 && < 0.14
-  - xmlbf >= 0.3 && < 0.4
-  - xmlbf-xeno >= 0.1 && < 0.2
+  - xmlbf >= 0.4
+  - xmlbf-xeno >= 0.1
 
 library:
   source-dirs: src
