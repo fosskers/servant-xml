@@ -13,7 +13,7 @@
 -- and successfully returned by Servant endpoints.
 -- Types with a `FromXml` instance can be decoded from request bodies.
 --
--- In implementing these typeclass instances, you can use the primatives
+-- In implementing these typeclass instances, you can use the primitives
 -- found in the /xmlbf/ library.
 
 module Servant.XML where
