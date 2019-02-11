@@ -1,5 +1,9 @@
 # CHANGELOG
 
+### 1.0.1.3
+
+- Bump various bounds.
+
 ### 1.0.1.1
 
 - Bump `servant` upper bound.

@@ -1,9 +1,4 @@
-resolver: lts-11.4
+resolver: lts-13.6
 
 packages:
   - .
-
-extra-deps:
-  - html-entities-1.1.4.2
-  - xmlbf-0.4
-  - xmlbf-xeno-0.1.1
