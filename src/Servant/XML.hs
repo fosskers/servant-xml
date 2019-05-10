@@ -1,20 +1,21 @@
-{-# LANGUAGE FlexibleInstances, MultiParamTypeClasses #-}
-{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE FlexibleInstances     #-}
+{-# LANGUAGE MultiParamTypeClasses #-}
+{-# LANGUAGE OverloadedStrings     #-}
 
 -- |
 -- Module    : Servant.XML
--- Copyright : (c) Colin Woodbury, 2018
+-- Copyright : (c) Colin Woodbury, 2018 - 2019
 -- License   : BSD3
--- Maintainer: Colin Woodbury <colingw@gmail.com>
+-- Maintainer: Colin Woodbury <colin@fosskers.ca>
 --
 -- Servant support for XML.
 --
--- Types with a `ToXml` instance will be automatically marshalled into XML
--- and successfully returned by Servant endpoints.
--- Types with a `FromXml` instance can be decoded from request bodies.
+-- Types with a `ToXml` instance will be automatically marshalled into XML and
+-- successfully returned by Servant endpoints. Types with a `FromXml` instance
+-- can be decoded from request bodies.
 --
--- In implementing these typeclass instances, you can use the primitives
--- found in the /xmlbf/ library.
+-- In implementing these typeclass instances, you can use the primitives found
+-- in the /xmlbf/ library.
 
 module Servant.XML where
 
@@ -22,8 +23,8 @@ import           Data.ByteString.Builder (toLazyByteString)
 import           Data.ByteString.Lazy (toStrict)
 import qualified Network.HTTP.Media as M
 import           Servant.API
-import           Xmlbf
-import           Xmlbf.Xeno
+import           Xmlbf (FromXml(..), ToXml(..), encode, runParser)
+import           Xmlbf.Xeno (fromRawXml)
 
 ---
 
@@ -48,4 +49,4 @@ instance ToXml a => MimeRender XML a where
   mimeRender _ = toLazyByteString . encode . toXml
 
 instance FromXml a => MimeUnrender XML a where
-  mimeUnrender _ bs = nodes (toStrict bs) >>= runParser fromXml
+  mimeUnrender _ bs = fromRawXml (toStrict bs) >>= runParser fromXml

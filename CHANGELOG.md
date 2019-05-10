@@ -1,5 +1,9 @@
 # CHANGELOG
 
+### 1.0.1.4
+
+- Support for recent versions of `xmlbf` and `xmlbf-xeno`.
+
 ### 1.0.1.3
 
 - Bump various bounds.

@@ -1,4 +1,8 @@
-resolver: lts-13.6
+resolver: lts-13.20
 
 packages:
   - .
+
+extra-deps:
+  - xmlbf-0.5
+  - xmlbf-xeno-0.2
