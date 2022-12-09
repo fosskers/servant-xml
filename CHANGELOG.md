@@ -1,5 +1,11 @@
 # CHANGELOG
 
+### 1.0.2 (2022-12-09)
+
+#### Changed
+
+- Updated to work with `xmlbf-0.7`.
+
 ### 1.0.1.4
 
 - Support for recent versions of `xmlbf` and `xmlbf-xeno`.

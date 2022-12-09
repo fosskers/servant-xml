@@ -4,7 +4,7 @@
 
 -- |
 -- Module    : Servant.XML
--- Copyright : (c) Colin Woodbury, 2018 - 2019
+-- Copyright : (c) Colin Woodbury, 2018 - 2022
 -- License   : BSD3
 -- Maintainer: Colin Woodbury <colin@fosskers.ca>
 --
@@ -23,7 +23,7 @@ import           Data.ByteString.Builder (toLazyByteString)
 import           Data.ByteString.Lazy (toStrict)
 import qualified Network.HTTP.Media as M
 import           Servant.API
-import           Xmlbf (FromXml(..), ToXml(..), encode, runParser)
+import           Xmlbf (FromXml(..), ToXml(..), encode, parse)
 import           Xmlbf.Xeno (fromRawXml)
 
 ---
@@ -49,4 +49,4 @@ instance ToXml a => MimeRender XML a where
   mimeRender _ = toLazyByteString . encode . toXml
 
 instance FromXml a => MimeUnrender XML a where
-  mimeUnrender _ bs = fromRawXml (toStrict bs) >>= runParser fromXml
+  mimeUnrender _ bs = fromRawXml (toStrict bs) >>= parse fromXml

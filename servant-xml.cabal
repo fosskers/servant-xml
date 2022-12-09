@@ -1,7 +1,7 @@
 cabal-version: 1.24
 
 name:           servant-xml
-version:        1.0.1.4
+version:        1.0.2
 synopsis:       Servant support for the XML Content-Type
 description:    Servant support for the Content-Type of /application\/xml/. Anything with 'ToXml' and 'FromXml' instances can be automatically marshalled.
 category:       Web
@@ -26,6 +26,6 @@ library
     , bytestring
     , http-media >= 0.7
     , servant >= 0.11
-    , xmlbf >= 0.5
-    , xmlbf-xeno >= 0.2
+    , xmlbf >= 0.7
+    , xmlbf-xeno >= 0.2.2
   exposed-modules: Servant.XML
