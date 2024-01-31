@@ -1,5 +1,11 @@
 # CHANGELOG
 
+### 1.0.3 (2024-01-31)
+
+#### Fixed
+
+- Accept `Content-Type: application/xml` that are missing a `charset`. 
+
 ### 1.0.2 (2022-12-09)
 
 #### Changed
