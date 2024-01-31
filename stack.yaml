@@ -1,5 +1,1 @@
-resolver: lts-20.3
-
-extra-deps:
-  - xmlbf-0.7
-  - xmlbf-xeno-0.2.2
+resolver: lts-21.25
